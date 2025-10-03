@@ -43,6 +43,7 @@ body {
     font-family: 'W95FA', monospace;
     font-size: 17px;
     color: #ffcec1;
+    background-color: rgb(83, 9, 28);
     background-image: url("../assets/home/desertMirror.png");
     background-position: center top;
     background-size: 100% auto;
@@ -253,11 +254,47 @@ a[data-status]:hover::after {
     grid-area: gallery;
 }
 
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .gal-col1 { grid-area: gal-col1; }
 
 .gal-col2 { grid-area: gal-col2; }
 
 .gal-col3 { grid-area: gal-col3; }
+
+.gal-col1 img:hover {
+    transform: rotate(20deg);
+}
+
+.gal-col2 img {
+    filter: brightness(85%);
+    transition: filter 0.1s ease;
+}
+
+.gal-col2 img:hover {
+    filter: brightness(100%);
+    animation: neon-flicker 1s ease-in-out;
+}
+
+@keyframes neon-flicker {
+    0%, 100% { filter: brightness(100%); }
+    10% { filter: brightness(85%); }
+    20% { filter: brightness(100%); }
+    30% { filter: brightness(90%); }
+    40%, 100% { filter: brightness(100%); }
+}
+
+.gal-col3 img {
+    transition: opacity 0.3s ease;
+}
+
+.gal-col3 img:hover {
+    content: url("../assets/home/openPhone.png");
+}
 
 .gal-col1, .gal-col2, .gal-col3 {
     height: 100%;
