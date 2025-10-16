@@ -1,0 +1,325 @@
+/****  fonts  ****/
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('../assets/fonts/The-Seasons-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Piglet';
+    src: url('../assets/fonts/Piglet.ttf');
+}
+
+@font-face {
+    font-family: "W95FA";
+    src: url("../assets/fonts/W95FA.otf");
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 40px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header-nav"
+        "main";
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100%;
+    padding-top: 25px;
+}
+
+/****  under construction pop-up  ****/
+
+a[data-status] {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+a[data-status]::after {
+    content: attr(data-status);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #ff6c6c;
+    color: #fffedf;
+    font-family: "W95FA";
+    font-weight: bold;
+    font-size: 14px;
+    padding: 3px 3px;
+    border-radius: 1px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+a[data-status]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/****  body  ****/
+body {
+    background-color: #d6faff;
+    background-image: url("../assets/about/woods.png");
+    background-position: right bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+body h2 {
+    font-family: "Piglet";
+    color: #ff6c6c;
+}
+
+html, body {
+    height: 100%;
+    margin: 0%;
+    padding: 0;
+}
+
+/****  header  ****/
+
+.header-nav {
+    grid-area: header-nav;
+    position: relative;
+}
+
+@media (min-width: 600px) {
+    .header-nav {
+        height: 100px;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-nav {
+        height: 300px;
+    }
+}
+
+.header-nav-wood {
+    position: relative;
+    width: 100%;
+}
+
+.header-wood {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/****  navigation ****/
+
+.nav-swing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform-origin: center top;
+    z-index: 1;
+    animation: gentle-swing-forward 5s ease-in-out infinite;
+}
+
+.nav-swing:hover {
+    animation-play-state: paused;
+}
+
+@keyframes gentle-swing-forward {
+    0%, 100% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1.04) translateY(-2px); }
+}
+
+.nav-wood {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.nav-bar {
+    position: absolute;
+    width: 100%;
+    top: 83%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 65px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Piglet";
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    pointer-events: auto;
+    color: #ffd9a1;
+}
+
+.nav-bar a:hover {
+    text-decoration: underline;
+}
+
+/****  main  ****/
+
+.main {
+    grid-area: main;
+}
+
+/****  stamp (under construction)  ****/
+
+.stamp {
+    position: relative;
+    /*--radius: 8px;
+    background-image:
+        radial-gradient(
+            var(--radius)
+            #fff19c;
+        ),
+        linear-gradient(#fff19c 0 0);
+    background-repeat:
+        round,
+        no-repeat;
+    background-position:
+        calc(var(--radius) * -1.5) calc(var(--radius) * -1.5),
+        50%;
+    background-size:
+        calc(var(--radius) * 3) calc(var(--radius) * 3 ),
+        calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);*/
+}
+
+/****  text box  ****/
+
+.yellow-box {
+    position: relative;
+    background-color: #fffeee;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    outline: 4px solid #fffedf;
+    border: 1px dashed #501d0d;
+    height: 350px;
+    overflow-y: auto;
+
+    font-family: "The Seasons";
+    font-size: 16px;
+    font-weight: bolder;
+    letter-spacing: .45px;
+    color: #501d0d;
+}
+
+.yellow-box h2 {
+    font-family: "Piglet";
+    color: #ff6c6c;
+}
+
+.yellow-box a {
+    color: #db8300;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.yellow-box a:hover {
+    text-decoration: underline;
+}
+
+/****  floating  ****/
+
+/*  tree and swing  */
+.tree-swing {
+    position: fixed;
+    bottom: 35px;
+    left: -10px;
+    width: 450px;
+    z-index: 100;
+}
+
+.tree {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 2;
+}
+
+.swing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform-origin: center top;
+    z-index: 1;
+    animation: gentle-swing 3.5s ease-in-out infinite;
+}
+
+@keyframes gentle-swing {
+    0%, 100% {
+        transform: rotate(-1.8deg);
+    }
+    50% {
+        transform: rotate(1.8deg);
+    }
+}
+
+/*  red balloon  */
+
+.red-balloon {
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    width: 60px;
+    z-index: 50;
+    animation: float-gentle 3s ease-in-out infinite;
+}
+
+.red-balloon:hover {
+    animation-play-state: paused;
+}
+
+@keyframes float-gentle {
+    0%, 100% { transform: translateY(13px); }
+    50% { transform: translateY(-13px); }
+}
+
+/*  blue balloon  */
+
+.blue-balloon-wrapper {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    width: 100px;
+    z-index: 50;
+    animation: float-across 30s linear infinite;
+}
+
+.blue-balloon-wrapper:hover {
+    animation-play-state: paused;
+}
+
+.blue-balloon {
+    width: 100px;
+    animation: float-gentle 2s ease-in-out infinite;
+}
+
+@keyframes float-across {
+    0% { transform: translateX(calc(100vw + 100px)); }
+    50% { transform: translateX(50vw); }
+    100% { transform: translateX(-100px); }
+}

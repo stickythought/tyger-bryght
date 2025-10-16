@@ -36,7 +36,6 @@
     padding-bottom: 100px;
 }
 
-
 /****  body  ****/
 
 body {
@@ -48,7 +47,6 @@ body {
     background-position: center top;
     background-size: 100% auto;
     background-repeat: repeat-y;
-    padding: 0;
 }
 
 html, body {
@@ -77,7 +75,6 @@ body a:hover {
     text-decoration: underline;
 }
 
-
 /****  header  ****/
 
 .header {
@@ -92,7 +89,6 @@ body a:hover {
     display: block;
     margin: 0 auto;
 }
-
 
 /****  under construction pop-up ****/
 
@@ -128,7 +124,6 @@ a[data-status]:hover::after {
     visibility: visible;
 }
 
-
 /****  navigation  ****/
 
 .nav-bar { grid-area: nav-bar; }
@@ -157,7 +152,6 @@ a[data-status]:hover::after {
     text-decoration: underline;
 }
 
-
 /****  main  ****/
 
 .main {
@@ -183,7 +177,6 @@ a[data-status]:hover::after {
     gap: 13px;
 }
 
-
 /****  text content  ****/
 
 .light-box {
@@ -201,7 +194,6 @@ a[data-status]:hover::after {
 
 .text-box br { height: 5px; }
 
-
 /****  picutre content  ****/
 
 .dark-box {
@@ -213,7 +205,6 @@ a[data-status]:hover::after {
     height: auto;
     display: block;
 }
-
 
 /****  dividers  ****/
 
@@ -239,7 +230,6 @@ a[data-status]:hover::after {
         0 0 11px 0px #dbffa3,
         0 0 16px 0px #dbffa3;
 }
-
 
 /****  gallery  ****/
 
@@ -304,7 +294,6 @@ a[data-status]:hover::after {
     justify-content: center;
 }
 
-
 /****  footer  ****/
 
 .footer {  display: grid;
@@ -347,7 +336,6 @@ a[data-status]:hover::after {
     overflow: hidden;
     white-space: nowrap;
 }
-
 
 /****  marquee  ****/
 
